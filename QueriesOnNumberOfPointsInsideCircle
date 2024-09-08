@@ -1,0 +1,15 @@
+class Solution(object):
+    def countPoints(self, points, queries):
+        answer = []
+
+        for q in queries:
+            res = 0
+            xq, yq, r = q
+            for p in points:
+                x, y = p
+                if abs(xq - x)**2 + abs(yq - y)**2 <= r**2:
+                    res += 1
+
+            answer.append(res)
+        
+        return answer
